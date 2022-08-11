@@ -70,7 +70,7 @@ func main() {
 					d := discord.Embed{
 						Title:       content.GetName(),
 						Description: string(data),
-						URL:         content.GetURL(),
+						URL:         content.GetHTMLURL(),
 					}
 					_, _ = s.SendEmbeds(channel.ID, d)
 				}
