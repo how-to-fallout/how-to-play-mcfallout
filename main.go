@@ -44,7 +44,7 @@ func main() {
 				continue
 			}
 			fmt.Println(file.GetFilename())
-			compile := regexp.MustCompile("channels/(\\d+)/([\\S\\s]+)\\.txt").FindStringSubmatch(file.GetFilename())
+			compile := regexp.MustCompile("channels/(\\d+)/([\\S\\s]+)").FindStringSubmatch(file.GetFilename())
 			if compile == nil {
 				return
 			}
