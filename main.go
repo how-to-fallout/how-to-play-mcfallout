@@ -24,6 +24,11 @@ func main() {
 		log.Fatalln(err)
 	}
 	s.AddIntents(32767)
+	err = s.Open(context.Background())
+	if err != nil {
+		log.Fatalln(err)
+		return
+	}
 	client := github.NewClient(nil)
 	commits, _, err := client.PullRequests.ListCommits(context.Background(), "how-to-fallout", "how-to-play-mcfallout", PRNumber, nil)
 	if err != nil {
