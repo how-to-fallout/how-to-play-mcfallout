@@ -29,6 +29,11 @@ func main() {
 	if err != nil {
 		return
 	}
+	pr, _, err := client.PullRequests.Get(context.Background(), "how-to-fallout", "how-to-play-mcfallout", PRNumber)
+	if !pr.GetMerged() {
+		return
+	}
+
 	for i, commit := range commits {
 		if i == 0 {
 			for _, file := range commit.Files {
